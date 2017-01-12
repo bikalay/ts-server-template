@@ -1,4 +1,3 @@
-
 const properties = {
     HOST: process.env.HOST || 'localhost',
     PORT: process.env.PORT || '3001',
@@ -9,9 +8,9 @@ const properties = {
     SMTP_USER: process.env.SMTP_USER,
     SMTP_PASSWORD: process.env.SMTP_PASSWORD,
 
-    MONGO_HOST: process.env.MONGO_HOST || 'localhost',
-    MONGO_PORT: process.env.MONGO_PORT || '27018',
-    MONGO_DB_NAME: process.env.MONGO_DB_NAME || 'development-tracker',
+    DB_HOST: process.env.DB_HOST || 'localhost',
+    DB_PORT: process.env.DB_PORT || '27018',
+    DB_NAME: process.env.DB_NAME || 'default',
     MONGO_URL: null
 };
 

@@ -3,7 +3,7 @@ var frisby = require('frisby');
 var props = require('../../properties');
 
 
-var url = 'http://'+props.HOST+':'+props.PORT+'/api';
+var url = `http://${props.HOST}:${props.PORT}/api`;
 
 frisby.create('not found').get(url+'/asdads/asdasd?asd=132')
     .expectStatus(404)
