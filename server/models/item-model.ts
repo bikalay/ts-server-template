@@ -1,7 +1,8 @@
 import ottoman from '../db';
 import {isEmail} from './validation'
+import {IModel} from './imodel';
 
-export interface IItem {
+export interface IItem extends IModel {
   oid:string;
   name:string;
   number:number;
@@ -15,9 +16,9 @@ export const Item = ottoman.model('Item', {
 }, {
   id: 'oid',
   index: {
-    findByOid: {
+    findById: {
       by: 'oid',
-      type: 'n1ql',
+      type: 'refdoc'
     }
   }
 });
