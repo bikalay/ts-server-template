@@ -40,6 +40,7 @@
     "@types/less-middleware": "2.0.29",
     "@types/morgan": "1.7.32",
     "@types/node": "6.0.54",
+    "@types/validator": "5.7.35",
     "@types/winston": "0.0.32",
     "babel-core": "6.21.0",
     "babel-plugin-add-module-exports": "0.2.1",
