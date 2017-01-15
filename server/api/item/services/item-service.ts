@@ -15,13 +15,26 @@ export function findById(id:string) {
   });
 }
 
-export function list(query = {}) {
+export function list(query = {}, options={limit:100, skip:0}) {
   return new Promise((resolve, reject) => {
-    return Item.find(query, (err, result:Array<any>)=>{
+    return Item.find(query, options, (err, result:Array<any>)=>{
       if(err) {
         return reject(err);
       }
-      return resolve(result);
+      return count(query).then((count)=>{
+        return resolve({data:result, count});
+      });
+    });
+  });
+}
+
+export function count(query = {}) {
+  return new Promise((resolve, reject) => {
+    return Item.count(query, {}, (err, count)=>{
+      if(err) {
+        return reject(err);
+      }
+      return resolve(count);
     });
   });
 }
