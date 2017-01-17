@@ -6,6 +6,7 @@ import logger, {initLogger} from './logger';
 import {Server} from 'http';
 import routes from './routes';
 import props from '../properties';
+import cors from "./cors";
 
 const app:express.Express = express();
 
@@ -17,6 +18,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
+cors(app);
 initLogger(app);
 routes(app);
 handleErrors(app);
